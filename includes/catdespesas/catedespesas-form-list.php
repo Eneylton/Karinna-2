@@ -13,7 +13,7 @@ foreach ($categorias as $item) {
                       <button type="submit" class="btn btn-success editbtn" > <i class="fas fa-paint-brush"></i> </button>
                       &nbsp;
 
-                       <a href="categoria-delete.php?id=' . $item->id . '">
+                       <a href="catedesp-delete.php?id=' . $item->id . '">
                        <button type="button" class="btn btn-danger"> <i class="fas fa-trash"></i></button>
                        </a>
 
@@ -84,7 +84,7 @@ foreach ($paginas as $key => $pagina) {
                <div>
 
 
-                  <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#modal-default"> <i class="fas fa-plus"></i> Adicionar nova categoria</button>
+                  <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#modal-default"> <i class="fas fa-plus"></i> &nbsp; Nova</button>
 
 
                </div>
@@ -94,9 +94,9 @@ foreach ($paginas as $key => $pagina) {
                   <table class="table table-bordered table-dark table-bordered table-hover table-striped">
                      <thead>
                         <tr>
-                           <th> CÓDIGO </th>
+                           <th style="text-align: left; width:80px"> CÓDIGO </th>
                            <th> NOME </th>
-                           <th style="text-align: center;"> AÇÃO </th>
+                           <th style="text-align: center; width:200px"> AÇÃO </th>
                         </tr>
                      </thead>
                      <tbody>
@@ -124,6 +124,8 @@ foreach ($paginas as $key => $pagina) {
 <div class="modal fade" id="modal-default">
    <div class="modal-dialog">
       <div class="modal-content">
+       <form action="./catedesp-insert.php" method="post">
+   
          <div class="modal-header">
             <h4 class="modal-title">Adicionar Categoria Despesas
             </h4>
@@ -139,9 +141,11 @@ foreach ($paginas as $key => $pagina) {
          </div>
          <div class="modal-footer justify-content-between">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Salvar
-            </button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
          </div>
+
+         </form>
+
       </div>
       <!-- /.modal-content -->
    </div>
@@ -152,6 +156,7 @@ foreach ($paginas as $key => $pagina) {
 
 <div class="modal fade" id="editmodal">
    <div class="modal-dialog">
+   <form action="./catedesp-edit.php" method="get">
       <div class="modal-content">
          <div class="modal-header">
             <h4 class="modal-title">Editar Categoria Despesas
@@ -169,10 +174,11 @@ foreach ($paginas as $key => $pagina) {
          </div>
          <div class="modal-footer justify-content-between">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Salvar
+            <button type="submit" class="btn btn-primary">Salvar
             </button>
          </div>
       </div>
+      </form> 
       <!-- /.modal-content -->
    </div>
    <!-- /.modal-dialog -->

@@ -5,7 +5,7 @@ use  \App\Db\Pagination;
 use   \App\Entidy\Catdespesa;
 use    \App\Session\Login;
 
-define('TITLE','Categoria');
+define('TITLE','Categoria Despesas');
 define('BRAND','Despesas');
 
 
@@ -26,7 +26,7 @@ $where = implode(' AND ', $condicoes);
 $qtd = Catdespesa:: getQtd($where);
 
 
-$pagination = new Pagination($qtd, $_GET['pagina'] ?? 1, 20);
+$pagination = new Pagination($qtd, $_GET['pagina'] ?? 1, 7);
 
 $categorias = Catdespesa::getList($where, 'id desc',$pagination->getLimit());
 
